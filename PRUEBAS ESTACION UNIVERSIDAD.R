@@ -1,8 +1,6 @@
 library(readxl)
 library(stats)
-library(zoo)
 library(tseries)
-library(outliers)
 library(moments)
 library(nortest)
 
