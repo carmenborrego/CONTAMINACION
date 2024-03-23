@@ -70,3 +70,20 @@ ggqqplot(df$co)
 res <- cor.test(df$pm10, df$pm25, 
                 method = "pearson")
 
+todas=ggplot()+ 
+  geom_line(data=df, aes(x=c(1:nrow(df)), y=pm25),
+            size=.5, colour="royalblue4",) +
+  geom_line(data=df, aes(x=c(1:nrow(df)), y=pm10),
+            size=.5, colour="aquamarine",) +
+  geom_line(data=df, aes(x=c(1:nrow(df)), y=o3),
+            size=.5, colour="cornflowerblue",) +
+  geom_line(data=df, aes(x=c(1:nrow(df)), y=no2),
+            size=.5, colour="turquoise4",) +
+  geom_line(data=df, aes(x=c(1:nrow(df)), y=co),
+            size=.5, colour="gray",) +
+  labs(x="Time", y="Level") + theme_classic()
+legend=todas + xlab("Date")+ 
+  ylab("Contaminant")+
+  ggtitle("Contaminantes levels")
+print(legend)
+
