@@ -69,7 +69,7 @@ ggqqplot(df$co)
 
 res <- cor.test(df$pm10, df$pm25, 
                 method = "pearson")
-
+library(ggplot2)
 todas=ggplot()+ 
   geom_line(data=df, aes(x=c(1:nrow(df)), y=pm25),
             size=.5, colour="royalblue4",) +
